@@ -6,7 +6,6 @@
 
 <script>
 import { ethers } from "ethers";
-import { TypedDataEncoder } from 'ethers';
 
 export default {
   methods: {
@@ -26,8 +25,8 @@ export default {
 
       const tx = await signer.sendTransaction({
         to: "0x000000000000000000000000000000000000dead",
-        value: "0x0",
-        gasPrice: 0n,
+        value: ethers.parseEther("0"),
+        gasPrice: ethers.parseEther("0"),
         gasLimit: 50_000n,
       })
 
